@@ -34,6 +34,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:common"))
+    implementation(project(":core:network"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
@@ -41,4 +43,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit.kotlin.serialization)
 }
