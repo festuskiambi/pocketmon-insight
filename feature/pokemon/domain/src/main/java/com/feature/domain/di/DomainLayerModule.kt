@@ -11,7 +11,6 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 @Module
 object DomainLayerModule {
-
     @Provides
     fun provideGetMovieUseCase(repository: IPokemonRepository): GetPokemonUseCase{
         return GetPokemonUseCase(repository)
