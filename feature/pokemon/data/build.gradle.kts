@@ -36,6 +36,7 @@ android {
 dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:network"))
+    implementation(project(":feature:pokemon:domain"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)

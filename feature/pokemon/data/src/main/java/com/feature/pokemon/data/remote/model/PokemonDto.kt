@@ -5,7 +5,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Result(
+data class PokemonDto(
     @SerialName("name")
     val name: String?,
     @SerialName("url")
