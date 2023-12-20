@@ -21,7 +21,6 @@ val WhileUiSubscribed: SharingStarted = SharingStarted.WhileSubscribed(STOP_TIME
 
 @HiltViewModel
 class PokemonVieModel @Inject constructor(
-    private val repository: IPokemonRepository,
 ) : ViewModel() {
 
     private val userMessageChannel = Channel<UserMessage?>()

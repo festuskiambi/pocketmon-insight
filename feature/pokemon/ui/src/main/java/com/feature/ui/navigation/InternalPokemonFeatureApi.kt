@@ -4,16 +4,19 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.core.common.PokemonFeature
 import com.example.feature_api.FeatureApi
 import com.feature.ui.PokemonScreen
 
-object InternalFeatureApi: FeatureApi {
+internal object InternalPokemonFeatureApi: FeatureApi {
     override fun registerGraph(
         navHostController: NavHostController,
         navGraphBuilder: NavGraphBuilder,
     ) {
-        navGraphBuilder.navigation(startDestination = "Pokemon", route ="pokemon_nested_navigation" ){
-         composable("Pokemon"){
+        navGraphBuilder.navigation(
+            startDestination = PokemonFeature.SCREEN_ROUTE,
+            route = PokemonFeature.NESTED_ROUTE ){
+         composable(PokemonFeature.SCREEN_ROUTE,){
              PokemonScreen()
          }
         }

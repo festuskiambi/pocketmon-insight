@@ -54,6 +54,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:pokemon:ui"))
+    implementation(project(":core:common"))
+    implementation(project(":core:feature_api"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -63,6 +66,8 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation(libs.androidx.hilt.navigation.compose)
+
 
     // Hilt
     implementation(libs.hilt.android.core)
