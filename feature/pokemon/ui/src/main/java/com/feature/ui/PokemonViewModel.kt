@@ -2,8 +2,8 @@ package com.feature.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.core.common.util.Async
-import com.core.common.util.UserMessage
+import com.core.common.Async
+import com.core.common.UserMessage
 import com.feature.domain.model.Pokemon
 import com.feature.domain.repository.IPokemonRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -53,7 +53,7 @@ class PokemonVieModel @Inject constructor(
 }
 
 data class PokemonUiState(
-val pokemon: List<Pokemon>? = null,
-val isLoading: Boolean? = false,
-val userMessage: UserMessage? = null,
+    val pokemon: List<Pokemon>? = null,
+    val isLoading: Boolean? = false,
+    val userMessage: UserMessage? = null,
 )

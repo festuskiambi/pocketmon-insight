@@ -1,5 +1,5 @@
-package com.core.common.util
-import com.core.common.R
+package com.core.common
+
 open class UserMessage(val message: UiText? = null) {
     object LocationPermissionRequired :
         UserMessage(UiText.StringResource(R.string.permission_required_message))

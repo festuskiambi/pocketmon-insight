@@ -1,4 +1,4 @@
-package com.core.common.util
+package com.core.common
 
 sealed class Async<out T> {
     object Loading : Async<Nothing>()
