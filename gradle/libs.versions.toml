@@ -2,17 +2,19 @@
 activity-compose = "1.8.2"
 agp = "8.2.0"
 androidx-test-ext-junit = "1.1.5"
+androidxHiltNavigationCompose = "1.1.0"
+
 appcompat = "1.6.1"
 compose-bom = "2023.10.01"
 core-ktx = "1.12.0"
 espresso-core = "3.5.1"
-hilt = "2.45"
+hilt = "2.48.1"
 junit = "4.13.2"
 kotlin = "1.9.0"
-kotlinxSerializationJson = "1.5.0"
+kotlinxSerializationJson = "1.6.0"
 lifecycle-runtime-ktx = "2.6.2"
 material = "1.11.0"
-okhttp = "4.10.0"
+okhttp = "4.12.0"
 retrofit = "2.9.0"
 retrofitKotlinxSerializationJson = "1.0.0"
 
@@ -20,6 +22,7 @@ retrofitKotlinxSerializationJson = "1.0.0"
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }

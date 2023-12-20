@@ -9,5 +9,4 @@ import retrofit2.Retrofit
 class PokemonDataModule {
     @Provides
     fun providePokemonApi(retrofit: Retrofit): PokemonApi = retrofit.create(PokemonApi::class.java)
-
 }

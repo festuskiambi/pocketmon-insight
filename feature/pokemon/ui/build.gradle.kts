@@ -52,6 +52,7 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
+    implementation(project(":feature:pokemon:domain"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
@@ -62,6 +63,7 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
     implementation(libs.hilt.android.core)
+    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
 
