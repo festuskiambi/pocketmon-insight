@@ -4,9 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.core.common.Async
 import com.core.common.UserMessage
-import com.feature.domain.model.Pokemon
-import com.feature.domain.repository.IPokemonRepository
-import com.feature.domain.use_case.GetPokemonUseCase
+import com.feature.pokemon_list.domain.model.Pokemon
+import com.feature.pokemon_list.domain.use_case.GetPokemonUseCase
+
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow

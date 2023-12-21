@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 object AppModule {
     @Provides
-    fun provideNavigationProvider(pokemonApi: com.feature.pokemon_list.ui.navigation.PokemonApi): NavigationProvider {
+    fun provideNavigationProvider(pokemonApi: PokemonApi): NavigationProvider {
         return NavigationProvider(pokemonApi)
     }
 }

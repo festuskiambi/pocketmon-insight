@@ -21,7 +21,7 @@ object UiModule {
 
 
     @Provides
-    fun providePokemonRepository(api: PokemonApi): IPokemonRepository {
+    fun providePokemonRepository(api: PokemonApiInterface): IPokemonRepository {
         return PokemonRepositoryImpl(api)
     }
 

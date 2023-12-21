@@ -1,6 +1,5 @@
 package com.core.network.di
 
-import com.example.pocketmoninsight.BuildConfig
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -27,9 +26,8 @@ class NetworkModule {
         loggingInterceptor: HttpLoggingInterceptor,
         ): OkHttpClient {
         return OkHttpClient.Builder().apply {
-            if (BuildConfig.DEBUG) {
                 addInterceptor(loggingInterceptor)
-            }
+
         }.build()
     }
 

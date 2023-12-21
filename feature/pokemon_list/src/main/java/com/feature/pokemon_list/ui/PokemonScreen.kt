@@ -24,7 +24,7 @@ import androidx.lifecycle.findViewTreeViewModelStoreOwner
 
 @Composable
 fun PokemonScreen(
-    modifier: androidx.compose.ui.Modifier = androidx.compose.ui.Modifier,
+    modifier: Modifier = Modifier,
     viewModel: PokemonVieModel
 ) {
     PokemonList()
