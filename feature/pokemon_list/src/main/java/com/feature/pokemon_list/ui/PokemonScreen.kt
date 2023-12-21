@@ -48,7 +48,7 @@ fun PokemonScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text("Pokemon Insight")
+                    Text("PocketMon Insight")
                 },
                 actions = {
                     // You can add actions (icons or other UI elements) here
