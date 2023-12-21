@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.feature.pokemon.data"
+    namespace = "com.feature.pokemon_list"
     compileSdk = 34
 
     defaultConfig {
@@ -36,21 +36,31 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:common"))
     implementation(project(":core:network"))
-    implementation(project(":feature:pokemon:domain"))
+    implementation(project(":core:feature_api"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-
-    // Hilt
+    implementation(platform(libs.compose.bom))
+    implementation(libs.ui)
+    implementation(libs.ui.graphics)
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.material3)
     implementation(libs.hilt.android.core)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.activity.compose)
+    implementation(libs.retrofit.core)
+    implementation(libs.kotlinx.serialization.json)
+
     kapt(libs.hilt.compiler)
 
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.ui.test.manifest)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.retrofit.kotlin.serialization)
 }

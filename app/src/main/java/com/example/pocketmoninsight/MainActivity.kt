@@ -25,10 +25,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PocketMonInsightTheme {
-              val navController= rememberNavController()
+                val navController = rememberNavController()
                 App(
                     navHostController = navController,
-                    navigationProvider= navigationProvider
+                    navigationProvider = navigationProvider
                 )
             }
         }
@@ -36,11 +36,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun App(navHostController: NavHostController, navigationProvider: NavigationProvider){
+fun App(navHostController: NavHostController, navigationProvider: NavigationProvider) {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
-       AppNavGraph(navController = navHostController, navigationProvider = navigationProvider)
+        AppNavGraph(navController = navHostController, navigationProvider = navigationProvider)
     }
 }

@@ -1,7 +1,7 @@
 package com.example.pocketmoninsight.di
 
 import com.example.pocketmoninsight.navigation.NavigationProvider
-import com.feature.ui.navigation.PokemonApi
+import com.feature.pokemon_list.ui.navigation.PokemonApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 object AppModule {
     @Provides
-    fun provideNavigationProvider(pokemonApi: PokemonApi): NavigationProvider {
+    fun provideNavigationProvider(pokemonApi: com.feature.pokemon_list.ui.navigation.PokemonApi): NavigationProvider {
         return NavigationProvider(pokemonApi)
     }
 }

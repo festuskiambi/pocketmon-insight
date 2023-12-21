@@ -1,7 +1,7 @@
 package com.example.pocketmoninsight.navigation
 
-import com.feature.ui.navigation.PokemonApi
+import com.feature.pokemon_list.ui.navigation.PokemonApi
 
 data class NavigationProvider(
-    val pokemonApi: PokemonApi
+    val pokemonApi: com.feature.pokemon_list.ui.navigation.PokemonApi
 )

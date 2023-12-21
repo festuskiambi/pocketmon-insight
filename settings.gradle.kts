@@ -15,12 +15,13 @@ dependencyResolutionManagement {
 
 rootProject.name = "PocketMon Insight"
 include(":app")
-include(":feature:pokemon:data")
-include(":feature:pokemon:domain")
 include(":feature:pokemon:ui")
+
+include(":feature:pokemon:domain")
 include(":feature:pokemon_info:data")
 include(":feature:pokemon_info:ui")
 include(":feature:pokemon_info:domain")
 include(":core:network")
 include(":core:common")
 include(":core:feature_api")
+include(":feature:pokemon_list")
