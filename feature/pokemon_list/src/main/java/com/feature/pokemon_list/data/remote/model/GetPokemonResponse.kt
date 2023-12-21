@@ -1,10 +1,15 @@
 package com.feature.pokemon_list.data.remote.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 
-@Serializable
- data class GetPokemonResponse(
-    @SerialName("results")
-    val pokemon: List<PokemonDto?>?
+import com.google.gson.annotations.SerializedName
+
+data class GetPokemonResponse(
+    @SerializedName("count")
+    val count: Int?,
+    @SerializedName("next")
+    val next: String?,
+    @SerializedName("previous")
+    val previous: Any?,
+    @SerializedName("results")
+    val list: List<PokemonDto?>?
 )

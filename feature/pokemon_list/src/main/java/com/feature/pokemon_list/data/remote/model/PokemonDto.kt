@@ -1,13 +1,11 @@
 package com.feature.pokemon_list.data.remote.model
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
- data class PokemonDto(
-    @SerialName("name")
+data class PokemonDto(
+    @SerializedName("name")
     val name: String?,
-    @SerialName("url")
+    @SerializedName("url")
     val url: String?
 )

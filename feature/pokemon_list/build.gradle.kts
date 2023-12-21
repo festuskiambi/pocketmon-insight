@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.activity.compose)
     implementation(libs.retrofit.core)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.gson)
 
     kapt(libs.hilt.compiler)
 
