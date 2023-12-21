@@ -1,4 +1,4 @@
-package com.core.common.util
+package com.core.common
 
 import android.content.Context
 import androidx.annotation.StringRes

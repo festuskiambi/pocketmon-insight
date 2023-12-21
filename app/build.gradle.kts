@@ -2,7 +2,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -53,6 +54,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:pokemon_list"))
+    implementation(project(":core:feature_api"))
+    implementation(project(":core:common"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -62,6 +66,12 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation(libs.androidx.hilt.navigation.compose)
+
+
+    // Hilt
+    implementation(libs.hilt.android.core)
+    kapt(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
