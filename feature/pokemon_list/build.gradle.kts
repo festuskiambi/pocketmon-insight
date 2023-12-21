@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.hilt.android.core)
     implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(libs.retrofit.core)

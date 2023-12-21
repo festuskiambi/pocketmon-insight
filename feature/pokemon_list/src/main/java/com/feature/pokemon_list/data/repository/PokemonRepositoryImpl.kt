@@ -10,9 +10,9 @@ class PokemonRepositoryImpl @Inject constructor(
     private val api: PokemonApiInterface,
 ) : IPokemonRepository {
     override suspend fun getPokemon(): List<Pokemon?>? {
-        val result = api.getPokeMon().list
-        return result?.map {
+        val result = api.getPokeMon().list?.map {
             it?.toDomainModel()
         }
+        return result
     }
 }

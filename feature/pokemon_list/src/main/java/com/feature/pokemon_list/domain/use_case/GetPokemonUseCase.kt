@@ -11,16 +11,13 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class GetPokemonUseCase @Inject constructor(
-    private val repository: IPokemonRepository
+    private val repository: IPokemonRepository,
 ) {
     operator fun invoke() = flow<UiEvent<List<Pokemon?>?>> {
-        Log.e("Debug", "got to usecase")
-
         emit(UiEvent.Loading())
-         emit(UiEvent.Success(repository.getPokemon()))
+        val result = repository.getPokemon()
+        emit(UiEvent.Success(data = result))
     }.catch {
-        Log.e("Debug", it.toString())
-
         emit(UiEvent.Error(it.message.toString()))
     }.flowOn(Dispatchers.IO)
 
