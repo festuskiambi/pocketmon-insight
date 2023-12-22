@@ -1,4 +1,4 @@
-package com.feature.pokemon_info.domain.mapper
+package com.feature.pokemon_info.data.mapper
 
 import com.feature.pokemon_info.data.remote.model.GetPokemonInfoResponse
 import com.feature.pokemon_info.data.remote.model.StatDto

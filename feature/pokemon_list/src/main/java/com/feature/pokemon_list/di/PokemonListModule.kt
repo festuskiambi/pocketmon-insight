@@ -14,9 +14,9 @@ import retrofit2.Retrofit
 
 @InstallIn(SingletonComponent::class)
 @Module
-object UiModule {
+object PokemonListModule {
     @Provides
-    fun provideWeatherApi(retrofit: Retrofit): PokemonApiInterface =
+    fun providePokemonApiInterface(retrofit: Retrofit): PokemonApiInterface =
         retrofit.create(PokemonApiInterface::class.java)
 
 
