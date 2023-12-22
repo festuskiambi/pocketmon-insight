@@ -8,12 +8,17 @@ import com.core.common.PokemonFeature
 @Composable
 fun AppNavGraph(
     navController: NavHostController,
-    navigationProvider: NavigationProvider
-){
-  NavHost(navController = navController, startDestination = PokemonFeature.NESTED_ROUTE){
-      navigationProvider.pokemonApi.registerGraph(
-          navController,
-          this
-      )
-  }
+    navigationProvider: NavigationProvider,
+) {
+    NavHost(navController = navController, startDestination = PokemonFeature.NESTED_ROUTE) {
+        navigationProvider.pokemonApi.registerGraph(
+            navController,
+            this
+        )
+
+        navigationProvider.pokemonApi.registerGraph(
+            navController,
+            this
+        )
+    }
 }

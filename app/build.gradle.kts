@@ -55,6 +55,7 @@ android {
 
 dependencies {
     implementation(project(":feature:pokemon_list"))
+    implementation(project(":feature:pokemon_info"))
     implementation(project(":core:feature_api"))
     implementation(project(":core:common"))
 

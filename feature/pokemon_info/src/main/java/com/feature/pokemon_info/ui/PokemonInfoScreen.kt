@@ -3,6 +3,8 @@ package com.feature.pokemon_info.ui
 import androidx.compose.runtime.Composable
 
 @Composable
-fun PokemonInfoScreen(){
+fun PokemonInfoScreen(
+    id: String, viewModel: PokemonInfoViewModel,
+) {
 
 }
