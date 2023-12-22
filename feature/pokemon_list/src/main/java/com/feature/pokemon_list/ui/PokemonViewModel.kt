@@ -11,7 +11,6 @@ import com.feature.pokemon_list.domain.use_case.GetPokemonUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -26,25 +25,23 @@ class PokemonVieModel @Inject constructor(
     }
 
     private fun getPokemon() {
-        viewModelScope.launch {
-            useCase.invoke().onEach {
-                when (it) {
-                    is UiEvent.Loading -> {
-                        _state.value = PokemonUiState(isLoading = true)
-                    }
-
-                    is UiEvent.Error -> {
-                        _state.value = PokemonUiState(
-                            userMessage = UserMessage.SomethingWentWrong
-                        )
-                    }
-
-                    is UiEvent.Success -> {
-                        _state.value = PokemonUiState(pokemon = it.data)
-                    }
+        useCase.invoke().onEach {
+            when (it) {
+                is UiEvent.Loading -> {
+                    _state.value = PokemonUiState(isLoading = true)
                 }
-            }.launchIn(viewModelScope)
-        }
+
+                is UiEvent.Error -> {
+                    _state.value = PokemonUiState(
+                        userMessage = UserMessage.SomethingWentWrong
+                    )
+                }
+
+                is UiEvent.Success -> {
+                    _state.value = PokemonUiState(pokemon = it.data)
+                }
+            }
+        }.launchIn(viewModelScope)
     }
 }
 
