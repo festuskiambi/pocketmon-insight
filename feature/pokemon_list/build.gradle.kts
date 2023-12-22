@@ -59,12 +59,12 @@ dependencies {
     implementation(libs.hilt.android.core)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
-
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(libs.retrofit.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.gson)
+    implementation(libs.coil)
 
     kapt(libs.hilt.compiler)
 
