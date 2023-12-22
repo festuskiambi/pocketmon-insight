@@ -31,7 +31,7 @@ object PokemonListModule {
     }
 
     @Provides
-    fun provideGetMovieUseCase(repository: IPokemonRepository): GetPokemonUseCase {
+    fun provideGetPokemonUseCase(repository: IPokemonRepository): GetPokemonUseCase {
         return GetPokemonUseCase(repository)
     }
 }
