@@ -11,5 +11,5 @@ data class GetPokemonInfoResponse(
     @SerializedName("sprites")
     val sprites: Sprites?,
     @SerializedName("stats")
-    val stats: List<Stat>?
+    val statDtos: List<StatDto>?
 )
