@@ -16,7 +16,7 @@ fun AppNavGraph(
             this
         )
 
-        navigationProvider.pokemonApi.registerGraph(
+        navigationProvider.pokemonInfoApi.registerGraph(
             navController,
             this
         )

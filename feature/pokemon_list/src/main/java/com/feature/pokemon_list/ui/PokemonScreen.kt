@@ -1,6 +1,7 @@
 package com.feature.pokemon_list.ui
 
 import android.util.Log
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.feature.pokemon_list.domain.model.Pokemon
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -36,12 +38,10 @@ import com.feature.pokemon_list.domain.model.Pokemon
 fun PokemonScreen(
     modifier: Modifier = Modifier,
     viewModel: PokemonVieModel,
+    navController: NavController,
 ) {
-
     val snackbarHostState = remember { SnackbarHostState() }
-    val uiState  = viewModel.uiState.value
-
-    Log.d("ui poke", uiState.toString())
+    val uiState = viewModel.uiState.value
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -51,7 +51,6 @@ fun PokemonScreen(
                     Text("PocketMon Insight")
                 },
                 actions = {
-                    // You can add actions (icons or other UI elements) here
                     IconButton(
                         onClick = { /* Handle action click */ }
                     ) {
@@ -65,12 +64,12 @@ fun PokemonScreen(
         ) { paddingValues ->
         PokemonScreenContent(
             modifier = modifier.padding(paddingValues),
-            uiState = uiState
+            uiState = uiState,
+            navController = navController
         )
 
         uiState.userMessage?.let { userMessage ->
             val snackbarText = userMessage.message?.asString()
-
             LaunchedEffect(snackbarHostState) {
                 if (snackbarText != null) {
                     snackbarHostState.showSnackbar(
@@ -86,15 +85,25 @@ fun PokemonScreen(
 fun PokemonScreenContent(
     modifier: Modifier = Modifier,
     uiState: PokemonUiState,
+    navController: NavController?,
 ) {
     val pokemon = uiState.pokemon
 
-    Log.d("ui poke", pokemon.toString())
-
-    LazyColumn {
+    LazyColumn(modifier = modifier) {
         pokemon?.let {
             items(it.size) { index ->
-                PokemonItem(name = pokemon[index]?.name)
+                val currPokemon = pokemon[index]
+                val url = currPokemon?.url?.split("/")
+                val id = url?.getOrNull(url.size - 2) ?: ""
+
+                Log.d("id value", id)
+                PokemonItem(
+                    name = currPokemon?.name,
+                    modifier = Modifier
+                        .clickable {
+                            navController?.navigate("pokemon_info_screen_route/${id}")
+                        }
+                )
                 if (index < pokemon.size - 1) {
                     Divider(
                         modifier = Modifier
@@ -108,10 +117,9 @@ fun PokemonScreenContent(
 }
 
 @Composable
-fun PokemonItem(name: String?) {
-
+fun PokemonItem(name: String?, modifier: Modifier) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .height(60.dp)
             .padding(16.dp),
@@ -150,7 +158,8 @@ fun PokemonScreenPreview(
                         url = ""
                     )
                 )
-            )
+            ),
+            navController = null
         )
     }
 }

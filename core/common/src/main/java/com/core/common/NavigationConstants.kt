@@ -7,5 +7,5 @@ object PokemonFeature {
 
 object PokemonInfoFeature {
     const val NESTED_ROUTE = "pokemon_info_nested_route"
-    const val SCREEN_ROUTE = "pokemon_info_screen_route"
+    const val SCREEN_ROUTE = "pokemon_info_screen_route/{id}"
 }

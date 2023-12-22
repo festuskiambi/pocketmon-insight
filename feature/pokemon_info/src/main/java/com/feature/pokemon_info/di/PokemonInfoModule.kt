@@ -4,6 +4,8 @@ import com.feature.pokemon_info.data.remote.PokemonInfoApiInterface
 import com.feature.pokemon_info.data.repository.PokemonInfoRepositoryImpl
 import com.feature.pokemon_info.domain.repository.IPokemonInfoRepositoryInfo
 import com.feature.pokemon_info.domain.use_case.GetPokemonInfoUseCase
+import com.feature.pokemon_info.ui.navigation.PokemonInfoApi
+import com.feature.pokemon_info.ui.navigation.PokemonInfoApiImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,5 +27,10 @@ object PokemonInfoModule {
     @Provides
     fun provideGetPokemonUseCase(repository: IPokemonInfoRepositoryInfo): GetPokemonInfoUseCase {
         return GetPokemonInfoUseCase(repository)
+    }
+
+    @Provides
+    fun providePokemonInfoApi(): PokemonInfoApi {
+        return PokemonInfoApiImpl()
     }
 }
