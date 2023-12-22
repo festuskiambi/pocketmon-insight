@@ -64,7 +64,6 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.gson)
-    implementation(libs.coil)
 
     kapt(libs.hilt.compiler)
 

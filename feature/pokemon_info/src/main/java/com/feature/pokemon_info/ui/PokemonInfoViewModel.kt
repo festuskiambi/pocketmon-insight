@@ -1,5 +1,6 @@
 package com.feature.pokemon_info.ui
 
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
@@ -26,10 +27,11 @@ class PokemonInfoViewModel @Inject constructor(
     init {
         savedStateHandle.getLiveData<String>("id").observeForever {
             it?.let {
+                Log.d("TAGGG", "${it}")
+
                 getPokeMonInfo(it)
             }
         }
-
     }
 
     private fun getPokeMonInfo(id: String) {
