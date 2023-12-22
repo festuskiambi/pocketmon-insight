@@ -110,7 +110,6 @@ fun PokemonDetailsContent(
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.padding(8.dp)
             )
-
             PokemonStatsList(stats = uiState.pokemonInfo?.stats)
         }
     }

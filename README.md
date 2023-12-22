@@ -31,7 +31,8 @@ This app is built with the Clean Architecture. Its broken down in modules which 
   feature).
 * Reactive UIs using **Flow** and **Coroutines** for asynchronous operations.
 ### Screenshot
-<img src="./screenshots/screenshots.jpg" height="480"/>
+<img src="./screenshots/1.png" height="480"/>
+<img src="./screenshots/2.png" height="480"/>
 
 ### Domain
 The Domain Layer has three primary purposes:
